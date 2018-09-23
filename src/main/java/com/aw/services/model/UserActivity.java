@@ -45,6 +45,7 @@ public class UserActivity {
 	public void setTimestamp(Timestamp timestamp) {
 		this.timestamp = timestamp;
 	}
+	
 	@ManyToOne(cascade = CascadeType.ALL)
 	@JoinColumn(name = "USERTABLE_ID")
 	public User getUser() {

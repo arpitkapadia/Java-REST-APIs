@@ -1,6 +1,5 @@
 package com.aw.services.model;
 import java.sql.Timestamp;
-
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -10,7 +9,7 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 
 @Entity
-public class ClickActivity {
+public class MouseMoveActivity {
 
 
 	private Integer id;
@@ -22,6 +21,8 @@ public class ClickActivity {
 	private User user;
 	
     private Timestamp timestamp = new Timestamp(System.currentTimeMillis());
+    
+    String documentName;
 
 	
 	@Id
@@ -67,4 +68,13 @@ public class ClickActivity {
 	public void setUser(User userId) {
 		this.user = userId;
 	}
+
+	public String getDocumentName() {
+		return documentName;
+	}
+
+	public void setDocumentName(String documentName) {
+		this.documentName = documentName;
+	}
 }
+

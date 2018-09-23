@@ -1,3 +1,4 @@
+
 package com.aw.services.model;
 import java.sql.Timestamp;
 
@@ -10,15 +11,13 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 
 @Entity
-public class ClickActivity {
+public class QuestionClickActivity {
 
 
 	private Integer id;
 	
-	private Integer pageX;
-	
-	private Integer pageY;
-	
+	private String question;
+		
 	private User user;
 	
     private Timestamp timestamp = new Timestamp(System.currentTimeMillis());
@@ -42,22 +41,6 @@ public class ClickActivity {
 		this.timestamp = timestamp;
 	}
 
-	public Integer getPageX() {
-		return pageX;
-	}
-
-	public void setPageX(Integer pageX) {
-		this.pageX = pageX;
-	}
-
-	public Integer getPageY() {
-		return pageY;
-	}
-
-	public void setPageY(Integer pageY) {
-		this.pageY = pageY;
-	}
-	
 	@ManyToOne(cascade = CascadeType.ALL)
 	@JoinColumn(name = "USERTABLE_ID")
 	public User getUser() {
@@ -66,5 +49,13 @@ public class ClickActivity {
 
 	public void setUser(User userId) {
 		this.user = userId;
+	}
+
+	public String getQuestion() {
+		return question;
+	}
+
+	public void setQuestion(String question) {
+		this.question = question;
 	}
 }
